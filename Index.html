@@ -13,7 +13,7 @@
 
     $(".deck").css({
 
-      right: '10px' ,
+      right: '0px' ,
       top:   event.pageY  });
     
     $(".description").css({
@@ -23,6 +23,20 @@
   });
 });
 
+function activaDiv(id){
+    name = String(id);
+    if (id=='#Gestion Escolar1'){
+      name = '#1';
+
+    }
+    if(id=='#Edificio de Gobierno1'){
+      name = '#2';
+
+    }
+    return name;
+
+
+};
  $description = $(".description");
 
  $(function(){$('.enabled').hover(function() {
@@ -34,8 +48,9 @@
     $(".content").addClass('active');
 
     idHov = String(($(this).attr('id')));
-    $('.'+idHov).show();
+    //$('.'+idHov).show();
     idHov='#'+idHov+'1';
+    idHov=activaDiv(idHov);
     //window.alert(idHov);
     $(idHov).css("display", "block");
   }, 
@@ -916,14 +931,16 @@ $(document).on('mousemove', function(e){
        id="path3179" /><path
        style="opacity:0.712025;fill:#671b12;fill-opacity:0.827465;stroke:#000000;stroke-width:3.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        d="m 345.16337,278.35755 66.0105,139.17878 -73.96358,37.37944 -64.41989,-141.5647 z"
-       id="path3183" /><path
+       id="Talleres"
+       class="enabled" /><path
        style="opacity:0.712025;fill:#d2ac41;fill-opacity:0.753521;stroke:#000000;stroke-width:3.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        d="M 1066.4191,359.18291 952.08765,348.05329 935.89912,528.15064 1050.2306,540.29203 Z"
        id="Hangar" 
        class="enabled" /><path
        style="opacity:0.712025;fill:#671b12;fill-opacity:0.827465;stroke:#260000;stroke-width:3.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        d="m 575.70443,551.42164 -8.09426,-15.17674 36.42418,-14.16496 77.90728,164.9206 -93.08402,45.53023 -70.8248,-152.77921 z"
-       id="path3187" /><path
+       id="Edificio de Gobierno"
+       class="enabled" /><path
        style="opacity:0.712025;fill:#671b12;fill-opacity:0.827465;stroke:#000000;stroke-width:3.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        d="m 773.00209,418.87809 -34.40062,14.16496 102.19006,226.63936 38.44775,-17.20031 -61.71875,-138.61425 18.21209,-8.09426 -14.16496,-32.37705 -17.20031,7.08248 -5.05891,1.01178 z"
        id="path6099" /><path
@@ -1312,7 +1329,7 @@ $(document).on('mousemove', function(e){
     
     <div class="deck">
     <div class="content">
-       <div class="Hangar1" id="Hangar1">
+       <div style="display:none" class="Hangar1" id="Hangar1">
           <label>
             <h3>Planta Baja</h3>
           </label>
@@ -1322,7 +1339,7 @@ $(document).on('mousemove', function(e){
             <p>Academia Aeronautica</p>
         </div>
         
-        <div style="display:none" class="Gestion Escolar1" id="Gestion Escolar1">
+        <div style="display:none" class="2" id="2">
           <label>
             <h3>Planta Baja</h3>
           </label>
@@ -1340,6 +1357,29 @@ $(document).on('mousemove', function(e){
           <h3>Primer piso</h3>
             <p>Aulas</p>
             
+        </div>
+
+        <div style="display:none" class="1" id="1">
+          
+          
+          <h3>Primer piso</h3>
+            <p>Aulas</p>
+
+          <label>
+            <h3>Planta Baja</h3>
+          </label>
+          <p>Gestion Escolar</p>  
+            
+        </div>
+        <div style="display:none" class="Talleres1" id="Talleres1">
+          <label>
+            <h3>Planta Baja</h3>
+          </label>
+          <p>Biblioteca</p>
+          <p>Auditorio</p>
+          <h3>Primer piso</h3>
+            <p>Direccion</p>
+            <p>Subdireccion</p>
         </div>
     </div>
     </div>
