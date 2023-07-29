@@ -25,14 +25,14 @@
 
 function activaDiv(id){
     name = String(id);
-	switch(id){
-		case '#Gestion Escolar1':
-			name = '#1';
-		[break;]
-		case '#Edificio de Gobierno1':
-			name = '#2';
-		[break;]
-		}
+    if (id=='#Gestion Escolar1'){
+      name = '#1';
+
+    }
+    if(id=='#Edificio de Gobierno1'){
+      name = '#2';
+
+    }
     return name;
 
 
